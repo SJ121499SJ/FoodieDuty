@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import AuthState from "./AuthState";
+
 
 export default class Nav extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">
-            User Name
+          <a className="navbar-brand" href="/signin">
+                <AuthState/>
           </a>
           <button
             className="navbar-toggler"
@@ -21,17 +24,17 @@ export default class Nav extends Component {
           </button>
           <div className="collapse navbar-collapse navStyling" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-item nav-link active" href="{.Find.js}">
+            <Link className="nav-item nav-link active" to="/">
+                Home <span className="sr-only">(current)</span>
+            </Link>
+            <Link className="nav-item nav-link active" to="/find">
                 Find Restaurants <span className="sr-only">(current)</span>
-              </a>
-              <a className="nav-item nav-link" href="#">
+            </Link>
+            <Link className="nav-item nav-link" to="#">
                 My Food Court
-              </a>
-            </div>
-            <div className="navbar-nav">
-            <a className="nav-item nav-link login/logout" href="#">
-                LogIn/ LogOut
-              </a>
+            </Link>
+
+
             </div>
           </div>
         </nav>
